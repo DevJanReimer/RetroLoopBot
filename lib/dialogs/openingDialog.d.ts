@@ -1,4 +1,10 @@
+import { TurnContext } from "botbuilder";
 export declare class OpeningDialog {
-    constructor();
-    greet(): string;
+    private currentQuestionIndex;
+    private isActiveDialog;
+    private questions;
+    run(context: TurnContext): Promise<void>;
+    handleResponse(context: TurnContext): Promise<void>;
+    private askNextQuestion;
+    isActive(): boolean;
 }
