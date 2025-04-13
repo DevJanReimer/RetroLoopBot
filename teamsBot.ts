@@ -17,7 +17,7 @@ export class TeamsBot extends TeamsActivityHandler {
     this.botApiService = new BotApiService();
 
     // Start the Bot API server
-    this.botApiService.startServer(3000); // Start the REST API server
+    this.botApiService.startServer(8080); // Start the REST API server
 
     // Handle new members being added
     this.onMembersAdded(async (context: TurnContext, next) => {

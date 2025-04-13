@@ -50,8 +50,8 @@ const bot = new teamsBot_1.TeamsBot();
 // Create express application.
 const expressApp = (0, express_1.default)();
 expressApp.use(express_1.default.json());
-const port = process.env.PORT || 8080;
-const server = expressApp.listen(port, () => {
+const port = process.env.PORT || 8080; // Use the PORT environment variable or default to 8080
+expressApp.listen(port, () => {
     console.log(`\nBot Started, listening on port ${port}`);
 });
 // Listen for incoming requests.
