@@ -43,23 +43,13 @@ export class BotApiService {
     app.use(express.json());
 
     // POST endpoint to ask a question
-    app.post("/api/askQuestion"), (req: Request, res: Response, next: NextFunction) => {
+    app.post('/api/askQuestion', async (req: Request, res: Response) => {
       const { question, options } = req.body as AskQuestionRequest;
 
       // Validate the request body
       if (!question || !options || !Array.isArray(options)) {
         return res.status(400).json({ error: "Invalid request. 'question' and 'options' are required." });
       }
-
-      // Call the askQuestion method and handle the promise
-      this.askQuestion(question, options)
-        .then(() => {
-          res.status(200).json({ message: "Question sent to the bot." });
-        })
-        .catch((error) => {
-          console.error("Error in /api/askQuestion:", error);
-          next(error); // Pass the error to the default error handler
-        });
     });
 
     // Default error handler
