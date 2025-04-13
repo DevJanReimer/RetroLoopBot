@@ -8,6 +8,8 @@ interface AskQuestionRequest {
   options: string[];
 }
 
+const port = process.env.PORT || 8080; // Use the PORT environment variable or default to 8080
+
 export class BotApiService {
   private context: TurnContext | null = null;
 
