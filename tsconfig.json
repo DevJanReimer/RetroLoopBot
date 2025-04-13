@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "target": "es2017",
+    "target": "es6",
     "module": "NodeNext",
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./",
     "moduleResolution": "nodenext",
     "sourceMap": true,
@@ -11,5 +11,8 @@
     "tsBuildInfoFile": "./lib/.tsbuildinfo",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-  }
+    "strict": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
