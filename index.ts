@@ -63,8 +63,9 @@ const bot = new TeamsBot();
 const expressApp = express();
 expressApp.use(express.json());
 
-const server = expressApp.listen(process.env.port || process.env.PORT || 8080, () => {
-  console.log(`\nBot Started, ${expressApp.name} listening to`, server.address());
+const port = process.env.PORT || 8080;
+const server = expressApp.listen(port, () => {
+  console.log(`\nBot Started, listening on port ${port}`);
 });
 
 // Listen for incoming requests.
@@ -72,4 +73,12 @@ expressApp.post("/api/messages", async (req, res) => {
   await adapter.process(req, res, async (context) => {
     await bot.run(context);
   });
+});
+
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught Exception:", err);
+});
+
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection at:", promise, "reason:", reason);
 });
