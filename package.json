@@ -1,9 +1,9 @@
 {
-    "name": "bot",
+    "name": "RetroLoop Bot",    
     "version": "1.0.0",
     "description": "Microsoft Teams Toolkit hello world Bot sample",
     "engines": {
-        "node": "18 || 20"
+        "node": "22"
     },
     "author": "Microsoft",
     "license": "MIT",
