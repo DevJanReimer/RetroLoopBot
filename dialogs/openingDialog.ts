@@ -25,7 +25,7 @@ export class OpeningDialog {
 
   public async run(context: TurnContext): Promise<void> {
     this.isActiveDialog = true; // Mark the dialog as active
-    const membersAdded = context.activity.membersAdded;
+    const membersAdded = context.activity.membersAdded ?? [];
 
     for (let member of membersAdded) {
       if (member.id !== context.activity.recipient.id) {

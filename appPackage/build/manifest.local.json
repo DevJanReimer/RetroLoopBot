@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "id": "bc1b3ad5-4cf2-4361-a286-45909e6c89d4",
     "developer": {
-        "name": "Teams App, Inc.",
+        "name": "Team RetroLoop",
         "websiteUrl": "https://www.example.com",
         "privacyUrl": "https://www.example.com/privacy",
         "termsOfUseUrl": "https://www.example.com/termofuse"
@@ -14,8 +14,8 @@
         "outline": "outline.png"
     },
     "name": {
-        "short": "botlocal",
-        "full": "full name for bot"
+        "short": "RetroLoop",
+        "full": "RetroLoop Retrospectives Assistant"
     },
     "description": {
         "short": "short description for bot",
